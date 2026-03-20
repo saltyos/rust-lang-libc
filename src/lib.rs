@@ -96,6 +96,14 @@ cfg_if! {
         pub use crate::solid::*;
 
         prelude!();
+    } else if #[cfg(target_os = "saltyos")] {
+        mod primitives;
+        pub use crate::primitives::*;
+
+        mod saltyos;
+        pub use crate::saltyos::*;
+
+        prelude!();
     } else if #[cfg(unix)] {
         mod primitives;
         pub use crate::primitives::*;
