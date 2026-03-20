@@ -108,6 +108,9 @@ cfg_if! {
     } else if #[cfg(target_os = "redox")] {
         mod redox;
         // pub(crate) use redox::*;
+    } else if #[cfg(target_os = "saltyos")] {
+        mod saltyos;
+        pub(crate) use saltyos::*;
     } else if #[cfg(target_os = "rtems")] {
         mod rtems;
         // pub(crate) use rtems::*;
